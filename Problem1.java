@@ -48,6 +48,12 @@ class Problem1 extends ConsoleProgram {
       // If last name has 4 or less characters, use full last name
       intLastNameIndex = strLast.length();
     }
+
+    // Checks if student number is 9 digits
+    if (strNum.length() != 9){
+      throw new IllegalArgumentException("incorrect parameter(s)");
+    }
+
     try{
       // Creating username
       strUsername = Character.toUpperCase(strFirst.charAt(0)) + strLast.substring(0, intLastNameIndex).toLowerCase() + strNum.substring(strNum.length() - 3, strNum.length());
